@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shooting Game in Virtual Reality</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+
+    <script src ="shooter.js"></script>
+  </head>
+  <body>
+    <a-scene id="scene">
+      <a-assets>
+        <a-asset-item
+          id="weapon"
+          src="./models/shooter/gun.gltf"
+        ></a-asset-item>
+      </a-assets>
+
+     
+      <a-entity id="camera" camera position="0 2 0" wasd-controls look-controls="pointerLockEnabled:false">
+        <a-entity
+        id="gun"
+        position="0 -5 0"
+        scale="0.5 1 1"
+        gltf-model="#weapon"
+        rotation="0 180 0"
+      ></a-entity>
+        
+        <a-cursor></a-cursor>
+      </a-entity>
+
+      <a-plane
+        id="ground"
+        color="orange"
+        height="200"
+        width="200"
+        rotation="-90 0 0"
+        static-body
+      ></a-plane>
+
+      <a-entity bullets></a-entity>
+
+      <a-box
+        id="b1"
+        color="red"
+        height="1.3"
+        width="1.3"
+        depth="1"
+        position="0 1 -10"
+        dynamic-body
+      ></a-box>
+      <a-box
+      id="b2"
+        color="red"
+        height="1.3"
+        width="1.3"
+        depth="1"
+        position="2 1 -10"
+        dynamic-body
+      ></a-box>
+      <a-box
+        id="b3"
+        color="red"
+        height="1.3"
+        width="1.3"
+        depth="1"
+        position="-2 1 -10"
+        dynamic-body
+      ></a-box>
+      <a-box
+        id="b4"
+        color="red"
+        height="1.3"
+        width="1.3"
+        depth="1"
+        position="1 2 -10"
+        dynamic-body
+      ></a-box>
+      <a-box
+      id="b5"
+        color="red"
+        height="1.3"
+        width="1.3"
+        depth="1"
+        position="-1 2 -10"
+        dynamic-body
+      ></a-box>
+      <a-box
+      id="b6"
+        color="red"
+        height="1.3"
+        width="1.3"
+        depth="1"
+        position="0 3 -10"
+        dynamic-body
+      ></a-box>
+
+
+      <a-box  id="w1"
+      color="green"
+      height="60"
+      width="40"
+      depth="1"
+      position="0 1 -20"
+      static-body ></a-box>
+
+    </a-scene>
+  </body>
+</html>
